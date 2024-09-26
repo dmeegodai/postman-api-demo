@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "75678794-af3d-41b1-9475-59d1e0d764c6",
+		"name": "imSMART Product Finder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37896799"
+	},
+	"item": [
+		{
+			"name": "Retrieve Default Product Pricing",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api3.appdataroom.com/{{endpoint1}}",
+					"protocol": "https",
+					"host": [
+						"api3",
+						"appdataroom",
+						"com"
+					],
+					"path": [
+						"{{endpoint1}}"
+					]
+				},
+				"description": "# Get Default Products\n\nThis endpoint retrieves the default products.\n\n## Request\n\n- Method: GET\n    \n- URL: `https://fu5shrbdne.execute-api.us-west-1.amazonaws.com/v1/products/default`\n    \n\n## Response\n\nThe response will contain an array of objects with the following keys:\n\n- `PartNo` (string)\n    \n- `Eaches` (number)\n    \n- `Rep` (number)\n    \n\nExample response:\n\n``` json\n[{\"PartNo\":\"\",\"Eaches\":0,\"Rep\":0}]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Retrieve Default Product Pricing Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cb80f17d-4b52-4c6a-a9e7-b2e458a224a2.mock.pstmn.io/products/default",
+							"protocol": "https",
+							"host": [
+								"cb80f17d-4b52-4c6a-a9e7-b2e458a224a2",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"products",
+								"default"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"PartNo\": \"1-0275\",\n        \"Eaches\": 8,\n        \"Rep\": 319.93\n    },\n    {\n        \"PartNo\": \"1-0276\",\n        \"Eaches\": 6,\n        \"Rep\": 347.75\n    },\n    {\n        \"PartNo\": \"1-0425\",\n        \"Eaches\": 10,\n        \"Rep\": 345.61\n    },\n    {\n        \"PartNo\": \"1-0426\",\n        \"Eaches\": 6,\n        \"Rep\": 281.41\n    },\n    {\n        \"PartNo\": \"1-0657\",\n        \"Eaches\": 6,\n        \"Rep\": 313.51\n    },\n    {\n        \"PartNo\": \"1-0658\",\n        \"Eaches\": 4,\n        \"Rep\": 292.11\n    },\n    {\n        \"PartNo\": \"1-0815\",\n        \"Eaches\": 10,\n        \"Rep\": 340.26\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve Customer Product Pricing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api3.appdataroom.com/{{endpoint2}}",
+					"protocol": "https",
+					"host": [
+						"api3",
+						"appdataroom",
+						"com"
+					],
+					"path": [
+						"{{endpoint2}}"
+					]
+				},
+				"description": "### Retrieve Customer-Specific Pricing\n\nThis endpoint retrieves the pricing information for a specific customer's products.\n\n## Request\n\n- Method: GET\n    \n- URL: `https://fu5shrbdne.execute-api.us-west-1.amazonaws.com/v1/customers/{customer_id}/pricing`\n    \n\n## Parameters\n\n- `customer_id` - (or CustomerCd). Tells the API which Customer to look up pricing information for.\n    \n\n## Response\n\nThe response will contain an array of objects with the following keys:\n\n- `PartNo` (string)\n    \n- `BaseUnitDenominatorEaches` (number)\n    \n- `MasterAgreementPriceDisplay` (number)\n    \n- `ExceptionPrice` (number)\n    \n\nExample response:\n\n``` json\n[{\"PartNo\":\"\",\"BaseUnitDenominatorEaches\":0,\"MasterAgreementPriceDisplay\":0, \"ExceptionPrice\" 0}]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Retrieve Customer Product Pricing Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cb80f17d-4b52-4c6a-a9e7-b2e458a224a2.mock.pstmn.io/customers/{{customer_id}}/pricing",
+							"protocol": "https",
+							"host": [
+								"cb80f17d-4b52-4c6a-a9e7-b2e458a224a2",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}",
+								"pricing"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"PartNo\": \"1-0275\",\n        \"BaseUnitDenominatorEaches\": 8,\n        \"MasterAgreementPriceDisplay\": 319.93,\n        \"ExceptionPrice\": 0\n    },\n    {\n        \"PartNo\": \"1-0276\",\n        \"BaseUnitDenominatorEaches\": 6,\n        \"MasterAgreementPriceDisplay\": 347.75,\n        \"ExceptionPrice\": 0\n    },\n    {\n        \"PartNo\": \"1-0425\",\n        \"BaseUnitDenominatorEaches\": 10,\n        \"MasterAgreementPriceDisplay\": 345.61,\n        \"ExceptionPrice\": 0\n    },\n    {\n        \"PartNo\": \"1-0426\",\n        \"BaseUnitDenominatorEaches\": 6,\n        \"MasterAgreementPriceDisplay\": 281.41,\n        \"ExceptionPrice\": 0\n    },\n    {\n        \"PartNo\": \"1-0657\",\n        \"BaseUnitDenominatorEaches\": 6,\n        \"MasterAgreementPriceDisplay\": 313.51,\n        \"ExceptionPrice\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Search Customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api3.appdataroom.com/{{endpoint3}}",
+					"protocol": "https",
+					"host": [
+						"api3",
+						"appdataroom",
+						"com"
+					],
+					"path": [
+						"{{endpoint3}}"
+					]
+				},
+				"description": "### Search Customer\n\nSearch for a customer by name.\n\n## Request\n\n- Method: GET\n    \n- URL: `https://fu5shrbdne.execute-api.us-west-1.amazonaws.com/v1/customers/search`\n    \n\n## Parameters\n\n- `searchText` - This searches for a customer on the `CustNameCityNumber_Visual` field. This parameter should be URL-encoded.\n    \n- `searchFields` - Coming soon\n    \n\n## Response\n\nThe response will contain an array of objects with the following keys:\n\n- `CustNameCityNumber_Visual` (string)\n    \n- `CustomerName` (string)\n    \n- `CustomerCd` (string)\n    \n\nExample response:\n\n``` json\n[{\"CustNameCityNumber_Visual\":\"\",\"CustomerName\":\"\",\"CustomerCd\":\"\"}]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Search Customers Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cb80f17d-4b52-4c6a-a9e7-b2e458a224a2.mock.pstmn.io/customers/search?searchText={{searchText}}",
+							"protocol": "https",
+							"host": [
+								"cb80f17d-4b52-4c6a-a9e7-b2e458a224a2",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"customers",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchText",
+									"value": "{{searchText}}"
+								},
+								{
+									"key": "searchFields",
+									"value": "{{searchFields}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"CustNameCityNumber_Visual\": \"# SAINT LUKES HEALTH SYSTEM-BOISE-0507396863\",\n        \"CustomerName\": \"# SAINT LUKES HEALTH SYSTEM\",\n\t\t\"CustomerCd\": \"507396863\"\n    },\n    {\n        \"CustNameCityNumber_Visual\": \"# SAINT LUKES HEALTH SYSTEM-MERIDIAN-0507396862\",\n        \"CustomerName\": \"# SAINT LUKES HEALTH SYSTEM-MERIDIAN\",\n\t\t\"CustomerCd\": \"0507396862\"\n    },\n    {\n        \"CustNameCityNumber_Visual\": \"# SAINT LUKES HEALTH SYSTEM-TWIN FALLS-0507396824\",\n        \"CustomerName\": \"# SAINT LUKES HEALTH SYSTEM-TWIN FALLS\",\n\t\t\"CustomerCd\": \"0507396824\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "ecolab tocken endpoint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"btc-dev@yopmail.com\",\"password\":\"UXmekCf5W535\",\"deviceToken\":\"dev-device-token\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ecolab-staging.imsmartapp.com/{{endpoint4}}",
+					"protocol": "https",
+					"host": [
+						"ecolab-staging",
+						"imsmartapp",
+						"com"
+					],
+					"path": [
+						"{{endpoint4}}"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST https://ecolab-staging.imsmartapp.com/Api/V4/Authentication/SignOn \\\r\n-H \"Content-Type: application/json\" \\\r\n-H \"Accept: application/json\" \\\r\n-d '{\"username\":\"btc-dev@yopmail.com\",\"password\":\"UXmekCf5W535\",\"deviceToken\":\"dev-device-token\"}'\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint1",
+			"value": "enter correct endpoint here",
+			"type": "default"
+		},
+		{
+			"key": "endpoint2",
+			"value": "enter correct endpoint here",
+			"type": "default"
+		},
+		{
+			"key": "endpoint3",
+			"value": "enter correct endpoint here",
+			"type": "default"
+		},
+		{
+			"key": "endpoint4",
+			"value": "enter correct endpoint here",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

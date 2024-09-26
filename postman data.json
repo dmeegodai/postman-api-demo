@@ -1,0 +1,17 @@
+[
+   {
+      "endpoint":"api/register/qa",
+      "email":"eve.holt@reqres.in",
+      "password":"pistol"
+   },
+   {
+      "endpoint":"api/register/dev",
+      "email":"eve.holter@reqres.in",
+      "password":"sword"
+   },
+   {
+      "endpoint":"api/register/prod",
+      "email":"eve.holteries@reqres.in",
+      "password":"armor"
+   }
+]
